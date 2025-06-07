@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 
         const doc = dom.window.document;
         const parsed = new Readability(doc).parse();
-        let parsedContent = parsed
+        let parsedContent = parsed && parsed.textContent 
           ? cleanedText(parsed.textContent)
           : "Nothing found";
 
